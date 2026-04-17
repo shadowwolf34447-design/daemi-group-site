@@ -10,7 +10,7 @@ const loginForm = document.querySelector('.auth-form')
 if (loginForm && document.title.includes('Login')) {
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault()
-    const email = document.getElementById('username').value
+    const email = document.getElementById('email').value
     const password = document.getElementById('password').value
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) return alert(error.message)
